@@ -1,6 +1,5 @@
 package io.github.armramzing;
 
-import javax.swing.*;
 import java.math.BigDecimal;
 import java.util.Scanner;
 
@@ -77,13 +76,13 @@ public class Main {
         B1 = B;
         C1 = C;
         S1 = S;
-        Cir1 = Cir1;
+        Cir1 = Cir;
     }
 
     public static void main(String[] args) {
 
-        Window.start();
-        Window.calculate();
+        MainWindow.start();
+        MainWindow.calculate();
 
     }
 }
