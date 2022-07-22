@@ -5,27 +5,25 @@ import java.math.MathContext;
 
 public class Scale extends Main {
 
+    private static boolean isResult = false;
+
     public static void calculate() {
 
-        while(true){
-            Scale.heron();
-            if(S.equals(BigDecimal.ZERO)){
-                Scale.clampingAngleWithTwoSides();
-                if(S.equals(BigDecimal.ZERO)){
-                    Scale.oppositeAngleWithTwoSides();
-                    if(S.equals(BigDecimal.ZERO)){
-                        Scale.clampingSideWithTwoAngles();
-                        if(S.equals(BigDecimal.ZERO)){
-                            Scale.oppositeSideWithTwoAngles();
-                            if(S.equals(BigDecimal.ZERO)){
-                                Scale.threeAngles();
+            heron();
+            if(!isResult){
+                clampingAngleWithTwoSides();
+                if(!isResult){
+                    oppositeAngleWithTwoSides();
+                    if(!isResult){
+                        clampingSideWithTwoAngles();
+                        if(!isResult){
+                            oppositeSideWithTwoAngles();
                             }
                         }
                     }
                 }
-            }
-            break;
-        }
+
+        isResult = false;
 
     }
 
@@ -37,9 +35,8 @@ public class Scale extends Main {
                     BigDecimal p = a.add(b).add(c).divide(new BigDecimal("2"),new MathContext(15));
                     BigDecimal s2 = p.multiply(p.subtract(a).multiply(p.subtract(b)).multiply(p.subtract(c)));
                     S = s2.sqrt(MathContext.DECIMAL64);
-                    System.out.println(S);
+                    isResult = true;
                     Main.pass();
-                    Main.clear();
                 }
             }
         }
@@ -54,9 +51,8 @@ public class Scale extends Main {
                         BigDecimal piA = A.divide(new BigDecimal("180"), new MathContext(15)).multiply(PI);
                         BigDecimal sinA = BigDecimal.valueOf(Math.sin(piA.doubleValue()));
                         S = b.multiply(c).multiply(sinA).divide(new BigDecimal("2"), new MathContext(15));
-                        System.out.println(S);
+                        isResult = true;
                         Main.pass();
-                        Main.clear();
                     }
                 }
             }
@@ -66,9 +62,8 @@ public class Scale extends Main {
                         BigDecimal piB = B.divide(new BigDecimal("180"), new MathContext(15)).multiply(PI);
                         BigDecimal sinB = BigDecimal.valueOf(Math.sin(piB.doubleValue()));
                         S = a.multiply(c).multiply(sinB).divide(new BigDecimal("2"), new MathContext(15));
-                        System.out.println(S);
+                        isResult = true;
                         Main.pass();
-                        Main.clear();
                     }
                 }
             }
@@ -78,9 +73,8 @@ public class Scale extends Main {
                         BigDecimal piC = C.divide(new BigDecimal("180"), new MathContext(15)).multiply(PI);
                         BigDecimal sinC = BigDecimal.valueOf(Math.sin(piC.doubleValue()));
                         S = a.multiply(b).multiply(sinC).divide(new BigDecimal("2"), new MathContext(15));
-                        System.out.println(S);
+                        isResult = true;
                         Main.pass();
-                        Main.clear();
                     }
                 }
             }
@@ -99,9 +93,8 @@ public class Scale extends Main {
                     BigDecimal piC = PI.subtract(piA).subtract(piB);
                     BigDecimal sinC = BigDecimal.valueOf(Math.sin(piC.doubleValue()));
                     S = a.multiply(b).multiply(sinC).divide(new BigDecimal("2"), new MathContext(15));
-                    System.out.println(S);
+                    isResult = true;
                     Main.pass();
-                    Main.clear();
                 }
             }
         }
@@ -115,9 +108,8 @@ public class Scale extends Main {
                     BigDecimal piC = PI.subtract(piA).subtract(piB);
                     BigDecimal sinC = BigDecimal.valueOf(Math.sin(piC.doubleValue()));
                     S = a.multiply(b).multiply(sinC).divide(new BigDecimal("2"), new MathContext(15));
-                    System.out.println(S);
+                    isResult = true;
                     Main.pass();
-                    Main.clear();
                 }
             }
         }
@@ -131,9 +123,8 @@ public class Scale extends Main {
                     BigDecimal piB = PI.subtract(piA).subtract(piC);
                     BigDecimal sinB = BigDecimal.valueOf(Math.sin(piB.doubleValue()));
                     S = a.multiply(c).multiply(sinB).divide(new BigDecimal("2"), new MathContext(15));
-                    System.out.println(S);
+                    isResult = true;
                     Main.pass();
-                    Main.clear();
                 }
             }
         }
@@ -147,9 +138,8 @@ public class Scale extends Main {
                     BigDecimal piB = PI.subtract(piA).subtract(piC);
                     BigDecimal sinB = BigDecimal.valueOf(Math.sin(piB.doubleValue()));
                     S = a.multiply(c).multiply(sinB).divide(new BigDecimal("2"), new MathContext(15));
-                    System.out.println(S);
+                    isResult = true;
                     Main.pass();
-                    Main.clear();
                 }
             }
         }
@@ -163,9 +153,8 @@ public class Scale extends Main {
                     BigDecimal piA = PI.subtract(piB).subtract(piC);
                     BigDecimal sinA = BigDecimal.valueOf(Math.sin(piA.doubleValue()));
                     S = b.multiply(c).multiply(sinA).divide(new BigDecimal("2"), new MathContext(15));
-                    System.out.println(S);
+                    isResult = true;
                     Main.pass();
-                    Main.clear();
                 }
             }
         }
@@ -179,9 +168,8 @@ public class Scale extends Main {
                     BigDecimal piA = PI.subtract(piB).subtract(piC);
                     BigDecimal sinA = BigDecimal.valueOf(Math.sin(piA.doubleValue()));
                     S = b.multiply(c).multiply(sinA).divide(new BigDecimal("2"), new MathContext(15));
-                    System.out.println(S);
+                    isResult = true;
                     Main.pass();
-                    Main.clear();
                 }
             }
         }
@@ -202,9 +190,8 @@ public class Scale extends Main {
                     BigDecimal piC = C.divide(new BigDecimal("180"), new MathContext(15)).multiply(PI);
                     BigDecimal sinC = BigDecimal.valueOf(Math.sin(piC.doubleValue()));
                     S = a.multiply(b).multiply(sinC).divide(new BigDecimal("2"), new MathContext(15));
-                    System.out.println(S);
+                    isResult = true;
                     Main.pass();
-                    Main.clear();
                 }
             }
         }
@@ -220,9 +207,8 @@ public class Scale extends Main {
                     BigDecimal piA = A.divide(new BigDecimal("180"), new MathContext(15)).multiply(PI);
                     BigDecimal sinA = BigDecimal.valueOf(Math.sin(piA.doubleValue()));
                     S = b.multiply(c).multiply(sinA).divide(new BigDecimal("2"), new MathContext(15));
-                    System.out.println(S);
+                    isResult = true;
                     Main.pass();
-                    Main.clear();
                 }
             }
         }
@@ -238,9 +224,8 @@ public class Scale extends Main {
                     BigDecimal piB = B.divide(new BigDecimal("180"), new MathContext(15)).multiply(PI);
                     BigDecimal sinB = BigDecimal.valueOf(Math.sin(piB.doubleValue()));
                     S = a.multiply(c).multiply(sinB).divide(new BigDecimal("2"), new MathContext(15));
-                    System.out.println(S);
+                    isResult = true;
                     Main.pass();
-                    Main.clear();
                 }
             }
         }
@@ -261,9 +246,8 @@ public class Scale extends Main {
                     BigDecimal piC = C.divide(new BigDecimal("180"), new MathContext(15)).multiply(PI);
                     BigDecimal sinC = BigDecimal.valueOf(Math.sin(piC.doubleValue()));
                     S = a.multiply(b).multiply(sinC).divide(new BigDecimal("2"), new MathContext(15));
-                    System.out.println(S);
+                    isResult = true;
                     Main.pass();
-                    Main.clear();
                 }
             }
         }
@@ -279,9 +263,8 @@ public class Scale extends Main {
                     BigDecimal piB = B.divide(new BigDecimal("180"), new MathContext(15)).multiply(PI);
                     BigDecimal sinB = BigDecimal.valueOf(Math.sin(piB.doubleValue()));
                     S = a.multiply(c).multiply(sinB).divide(new BigDecimal("2"), new MathContext(15));
-                    System.out.println(S);
+                    isResult = true;
                     Main.pass();
-                    Main.clear();
                 }
             }
         }
@@ -297,9 +280,8 @@ public class Scale extends Main {
                     BigDecimal piA = A.divide(new BigDecimal("180"), new MathContext(15)).multiply(PI);
                     BigDecimal sinA = BigDecimal.valueOf(Math.sin(piA.doubleValue()));
                     S = b.multiply(c).multiply(sinA).divide(new BigDecimal("2"), new MathContext(15));
-                    System.out.println(S);
+                    isResult = true;
                     Main.pass();
-                    Main.clear();
                 }
             }
         }
@@ -315,27 +297,8 @@ public class Scale extends Main {
                     BigDecimal piC = C.divide(new BigDecimal("180"), new MathContext(15)).multiply(PI);
                     BigDecimal sinC = BigDecimal.valueOf(Math.sin(piC.doubleValue()));
                     S = b.multiply(a).multiply(sinC).divide(new BigDecimal("2"), new MathContext(15));
-                    System.out.println(S);
+                    isResult = true;
                     Main.pass();
-                    Main.clear();
-                }
-            }
-        }
-        if(!b.equals(BigDecimal.ZERO)){
-            if(!B.equals(BigDecimal.ZERO)){
-                if(!A.equals(BigDecimal.ZERO)){
-                    BigDecimal piB = B.divide(new BigDecimal("180"), new MathContext(15)).multiply(PI);
-                    BigDecimal sinB = BigDecimal.valueOf(Math.sin(piB.doubleValue()));
-                    BigDecimal piA = A.divide(new BigDecimal("180"), new MathContext(15)).multiply(PI);
-                    BigDecimal sinA = BigDecimal.valueOf(Math.sin(piA.doubleValue()));
-                    a = b.multiply(sinA).divide(sinB, new MathContext(15));
-                    C = new BigDecimal("180").subtract(B).subtract(A);
-                    BigDecimal piC = C.divide(new BigDecimal("180"), new MathContext(15)).multiply(PI);
-                    BigDecimal sinC = BigDecimal.valueOf(Math.sin(piC.doubleValue()));
-                    S = b.multiply(a).multiply(sinC).divide(new BigDecimal("2"), new MathContext(15));
-                    System.out.println(S);
-                    Main.pass();
-                    Main.clear();
                 }
             }
         }
@@ -350,10 +313,9 @@ public class Scale extends Main {
                     B = new BigDecimal("180").subtract(C).subtract(A);
                     BigDecimal piB = B.divide(new BigDecimal("180"), new MathContext(15)).multiply(PI);
                     BigDecimal sinB = BigDecimal.valueOf(Math.sin(piB.doubleValue()));
+                    isResult = true;
                     S = c.multiply(a).multiply(sinB).divide(new BigDecimal("2"), new MathContext(15));
-                    System.out.println(S);
                     Main.pass();
-                    Main.clear();
                 }
             }
         }
@@ -369,30 +331,12 @@ public class Scale extends Main {
                     BigDecimal piA = A.divide(new BigDecimal("180"), new MathContext(15)).multiply(PI);
                     BigDecimal sinA = BigDecimal.valueOf(Math.sin(piA.doubleValue()));
                     S = c.multiply(b).multiply(sinA).divide(new BigDecimal("2"), new MathContext(15));
-                    System.out.println(S);
+                    isResult = true;
                     Main.pass();
-                    Main.clear();
                 }
             }
         }
 
-    }
-
-    public static void threeAngles(){
-
-        if(!A.equals(BigDecimal.ZERO)) {
-            if (!B.equals(BigDecimal.ZERO)) {
-                if (!C.equals(BigDecimal.ZERO)) {
-                    Main.clear();
-                    System.out.println("只给出三个角的数据无法解三角形！");
-                }
-            }
-        }
-
-    }
-
-    public void others(){
-        System.out.println("请检查你是否已经给出至少三个数据！");
     }
 
 }

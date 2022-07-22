@@ -10,7 +10,6 @@ public class Circumference extends Main{
             if(!b1.equals(BigDecimal.ZERO)){
                 if(!c1.equals(BigDecimal.ZERO)){
                     Cir1 = a1.add(b1).add(c1);
-                    System.out.println(Cir1);
                 }
             }
         }

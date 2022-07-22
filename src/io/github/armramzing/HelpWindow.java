@@ -4,7 +4,7 @@ import javax.swing.*;
 
 public class HelpWindow {
 
-    static String frame_2 = "帮助页面";
+    static String frame_2 = "帮助";
 
     public static void start(){
 

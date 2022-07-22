@@ -22,7 +22,7 @@ public class English extends MainWindow {
         frame_0_panel_0_lable_5 = "Angle C";
         frame_0_panel_0_lable_6 = "Scale S";
         frame_0_panel_0_lable_7 = "Circumference C";
-        frame_0_button_0 = "Calculate";
+        frame_0_panel_1_button_1 = "Calculate";
 
     }
 }

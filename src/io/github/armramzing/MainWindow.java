@@ -26,7 +26,8 @@ public class MainWindow extends Main {
     static String frame_0_panel_0_lable_5 = "夹角C";
     static String frame_0_panel_0_lable_6 = "面积S";
     static String frame_0_panel_0_lable_7 = "周长C";
-    static String frame_0_button_0 = "计算";
+    static String frame_0_panel_1_button_0 = "清空";
+    static String frame_0_panel_1_button_1 = "计算";
 
     static JPanel p0 = new JPanel();
     static JLabel p0l0 = new JLabel();
@@ -116,6 +117,7 @@ public class MainWindow extends Main {
         mb0.add(mb0m1);
 
         JMenuItem mb0m1mi0 = new JMenuItem(frame_0_menubar_0_menu_1_menuitem_0);
+        mb0m1mi0.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_1,InputEvent.ALT_DOWN_MASK));
         mb0m1mi0.addMouseListener(new MouseListener() {
             @Override
             public void mouseClicked(MouseEvent e) {
@@ -147,6 +149,7 @@ public class MainWindow extends Main {
         mb0m1.add(mb0m1mi0);
 
         JMenuItem mb0m1mi1 = new JMenuItem(frame_0_menubar_0_menu_1_menuitem_1);
+        mb0m1mi1.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_2,InputEvent.ALT_DOWN_MASK));
         mb0m1mi1.addMouseListener(new MouseListener() {
             @Override
             public void mouseClicked(MouseEvent e) {
@@ -178,6 +181,7 @@ public class MainWindow extends Main {
         mb0m1.add(mb0m1mi1);
 
         JMenuItem mb0m1mi2 = new JMenuItem(frame_0_menubar_0_menu_1_menuitem_2);
+        mb0m1mi2.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_3,InputEvent.ALT_DOWN_MASK));
         mb0m1mi2.addMouseListener(new MouseListener() {
             @Override
             public void mouseClicked(MouseEvent e) {
@@ -209,6 +213,7 @@ public class MainWindow extends Main {
         mb0m1.add(mb0m1mi2);
 
         JMenuItem mb0m1mi3 = new JMenuItem(frame_0_menubar_0_menu_1_menuitem_3);
+        mb0m1mi3.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_4,InputEvent.ALT_DOWN_MASK));
         mb0m1mi3.addMouseListener(new MouseListener() {
             @Override
             public void mouseClicked(MouseEvent e) {
@@ -273,7 +278,7 @@ public class MainWindow extends Main {
 
             }
         });
-        mb0m0mi0.addMenuKeyListener(new MenuKeyListener() {
+        mb0m2mi0.addMenuKeyListener(new MenuKeyListener() {
             @Override
             public void menuKeyTyped(MenuKeyEvent e) {
 
@@ -325,8 +330,50 @@ public class MainWindow extends Main {
 
         f.validate();
 
-        JButton b0 = new JButton(frame_0_button_0);
-        b0.addMouseListener(new MouseListener() {
+        JPanel p1 = new JPanel();
+        f.add(p1,BorderLayout.SOUTH);
+
+        JButton p1b0 = new JButton(frame_0_panel_1_button_0);
+        p1b0.addMouseListener(new MouseListener() {
+            @Override
+            public void mouseClicked(MouseEvent e) {
+
+            }
+
+            @Override
+            public void mousePressed(MouseEvent e) {
+
+                p0tf0.setText(null);
+                p0tf1.setText(null);
+                p0tf2.setText(null);
+                p0tf3.setText(null);
+                p0tf4.setText(null);
+                p0tf5.setText(null);
+                p0tf6.setText(null);
+                p0tf7.setText(null);
+                f.validate();
+
+            }
+
+            @Override
+            public void mouseReleased(MouseEvent e) {
+
+            }
+
+            @Override
+            public void mouseEntered(MouseEvent e) {
+
+            }
+
+            @Override
+            public void mouseExited(MouseEvent e) {
+
+            }
+        });
+        p1.add(p1b0,BorderLayout.WEST);
+
+        JButton p1b1 = new JButton(frame_0_panel_1_button_1);
+        p1b1.addMouseListener(new MouseListener() {
             @Override
             public void mouseClicked(MouseEvent e) {
 
@@ -365,6 +412,9 @@ public class MainWindow extends Main {
                 p0tf7.setText(String.valueOf(Cir1));
                 f.validate();
 
+                clear();
+                clearPassedValues();
+
             }
 
             @Override
@@ -382,7 +432,7 @@ public class MainWindow extends Main {
 
             }
         });
-        f.add(b0,BorderLayout.SOUTH);
+        p1.add(p1b1,BorderLayout.EAST);
         f.validate();
 
     }
